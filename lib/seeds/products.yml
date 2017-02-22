@@ -1,0 +1,40 @@
+products:
+  0:
+    id: 1
+    name: Ершик для туалета York
+    description: "Ершик для туалета York Миди выполнен из высококачественного полипропилена и полиэтилентерефталата (ПЭТ)."
+    picture_url: "http://ozon-st.cdn.ngenix.net/multimedia/audio_cd_covers/1014752489.jpg"
+    source: Ozon
+    source_url: http://www.ozon.ru/context/detail/id/136395857/
+    price: 149.0
+  1:
+    id: 2
+    name: Носки с алика
+    description: "Весь Сезон Носок Дышащий Хлопок Корабль Лодка Короткие Носки Лодыжки Невидимые Носки Calcetin Hombres"
+    picture_url: "https://ae01.alicdn.com/kf/HTB1fgCuJVXXXXalXVXXq6xXFXXXf/All-Season-Sock-Breathable-Cotton-Ship-Boat-Short-Sock-Ankle-Invisible-Socks-Calcetin-Hombres-2415.jpg"
+    source: Aliexpress
+    source_url: "https://ru.aliexpress.com/item/All-Season-Men-Sock-Breathable-Cotton-Ship-Boat-Short-Sock-Ankle-Invisible-Socks-Calcetin-Hombres-2415/32658779968.html?spm=2114.03010208.3.24.IZRMJC&ws_ab_test=searchweb0_0,searchweb201602_1_10000073_10000077_10000074_10000167_10000175_10000069_10000068_10000062_10000063_10099_10000156_10000158_10096_10000056_10000059_10000097_10000094_10000090_10000091_10000147_10000144_10084_10117_10000150_10083_10000011_10080_10000153_10082_10081_10110_10111_10112_10113_10114_10000089_10000086_10000083_10000135_10000080_10078_10079_10073_10000140_10070_10122_10123_10121_10126_10124_10125_10065_10068_10501_10000132_10000033_10503_119_10000030_10000126_10000026_10000129_10000023_10000123_431_432_10060_10062_10056_10055_10054_10059_10000120_10000020_10000117_10000013_10103_10102_10000016_10000114_10000111_10000213_10052_10053_10050_10107_10000214_10051_10106_10000101_10000100_10000104_10000045_10000108_10000191_10000197_10000179_10000042_100003_10000039_100001_10000036_10000187-10000213_10000214_10503_10501_100001_100003,searchweb201603_2,afswitch_1,ppcSwitch_5,single_sort_1_default&btsid=89e691e5-c733-4fe9-b2dd-f16410411353&algo_expid=1a9cec2f-ecbf-4da4-8d0f-0dc25029e4f6-2&algo_pvid=1a9cec2f-ecbf-4da4-8d0f-0dc25029e4f6"
+    price: 32.13
+  2:
+    id: 3
+    name: Contex презервативы "Lights"
+    description: "Особо тонкие презервативы Сontex Lights в силиконовой смазке с накопителем. Презервативы сохранят естественность ощущений, не снижая уровня защиты."
+    picture_url: "http://ozon-st.cdn.ngenix.net/multimedia/audio_cd_covers/1014461519.jpg"
+    source: Ozon
+    source_url: http://www.ozon.ru/context/detail/id/20996487/
+    price: 149.0
+  3:
+    id: 4
+    name: Lenovo ThinkServer TS140
+    description: "Sold by Electronic Seed and Fulfilled by Amazon. Gift-wrap available."
+    picture_url: "https://images-na.ssl-images-amazon.com/images/I/51u1vAj81AL.jpg"
+    source: Amazon
+    source_url: "https://www.amazon.com/gp/product/B0167MYLL8/ref=s9_acsd_top_hd_bw_bkIz9_c_x_1_w?pf_rd_m=ATVPDKIKX0DER&pf_rd_s=merchandised-search-3&pf_rd_r=KQSPK7KQYEYE9FXG31WJ&pf_rd_t=101&pf_rd_p=9fabc5a0-4076-5ebc-88ca-a95a258ede0d&pf_rd_i=11036071"
+    price: 14193.69
+  4:
+    id: 5
+    name: Bosch MSM 6B700 блендер
+    description: "Страна-изготовитель Китай"
+    picture_url: "http://ozon-st.cdn.ngenix.net/multimedia/spare_covers/1012985277.jpg"
+    source_url: http://www.ozon.ru/context/detail/id/3204033/
+    price: 2149.0

@@ -29,7 +29,12 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'rails-i18n'
 
+
+# changes audits
+gem "audited", '~> 4.3'
+gem "rails-observers", github: 'rails/rails-observers'
 # admin bundle
 gem 'activeadmin', '~> 1.0.0.pre4'
 # Rails 5 activeadmin spport
@@ -40,6 +45,8 @@ gem 'devise'
 gem 'materialize-sass'
 # Better template engine
 gem 'slim'
+
+gem 'smart_listing'
 
 
 # Use Capistrano for deployment
@@ -59,6 +66,9 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 # Convert views to slim
   gem 'html2slim'
+  # debugging
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :test do
