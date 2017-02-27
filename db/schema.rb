@@ -59,12 +59,14 @@ ActiveRecord::Schema.define(version: 20170222181026) do
 
   create_table "operations", force: :cascade do |t|
     t.float    "amount"
+    t.string   "source_type"
     t.integer  "source_id"
+    t.string   "destination_type"
     t.integer  "destination_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["destination_id"], name: "index_operations_on_destination_id"
-    t.index ["source_id"], name: "index_operations_on_source_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["destination_type", "destination_id"], name: "index_operations_on_destination_type_and_destination_id"
+    t.index ["source_type", "source_id"], name: "index_operations_on_source_type_and_source_id"
   end
 
   create_table "products", force: :cascade do |t|
