@@ -8,7 +8,7 @@ SmartListing.configure do |config|
     #:array                          => false,                       # controls whether smart list should be using arrays or AR collections
     #:max_count                      => nil,                         # limit number of rows
     #:unlimited_per_page             => false,                       # allow infinite page size
-    #:paginate                       => true,                        # allow pagination
+    :paginate                       => true,                        # allow pagination
     #:memorize_per_page              => false,                       # save per page settings in the cookie
     # :page_sizes                     => DEFAULT_PAGE_SIZES,          # set available page sizes array
     :page_sizes                     => [3, 5, 10],          # set available page sizes array

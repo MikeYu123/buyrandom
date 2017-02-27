@@ -6,7 +6,9 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = smart_listing_create(:products, Product.all, partial: "products/listing")
+    @products_scope = Product.all
+    @products_scope = @products_scope.by_name(params[:filter_name]) if params[:filter_name]
+    @products = smart_listing_create(:products, @products_scope, partial: "products/listing")
   end
 
   # GET /products/1

@@ -11,7 +11,7 @@ ru:
     product:
       header: 'Товары'
     pagination:
-      next: '<i class="material-icons">skip_next</i>'
-      previous: '<i class="material-icons">skip_previous</i>'
-      first: '<i class="material-icons">fast_rewind</i>'
-      last: '<i class="material-icons">fast_forward</i>'
+      next: '<i class="material-icons">chevron_right</i>'
+      previous: '<i class="material-icons">chevron_left</i>'
+      first: '<i class="material-icons">first_page</i>'
+      last: '<i class="material-icons">last_page</i>'

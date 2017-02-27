@@ -10,5 +10,6 @@ html
     =render '/layouts/header'
   	/ -unless current_user
   	/ 	= render '/devise/sessions/login_form'
-    = yield
+    .container
+      = yield
 

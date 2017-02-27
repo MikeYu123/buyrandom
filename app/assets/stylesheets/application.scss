@@ -32,9 +32,12 @@
  }
 
 	.pagination{
-		li.next, li.prev {
+		li.first, li.last, li.prev, li.next_page {
 			width: initial;
-			padding: 0
+      a {
+				// width: initial;
+				padding: 0
+			}
 		}
 	} 
  table {

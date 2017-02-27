@@ -1,3 +1,7 @@
+= smart_listing_controls_for(:products) do
+  .input-field
+    =text_field_tag :filter_name, '', class: "search"
+    =label_tag :filter_name, t('views.product.filter.name')
 - unless smart_listing.empty?
   table.bordered#products-listing
     thead
@@ -17,7 +21,7 @@
           td= product.description.truncate_words(5)
           td= link_to product.source, product.source_url
           td= number_to_currency(product.price)
-
-  = smart_listing.paginate
+  .center
+    = smart_listing.paginate
 - else
-  p.warning No records!
+  p.warning=t('views.product.no_match')
