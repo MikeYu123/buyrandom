@@ -1,1 +1,8 @@
 ru:
+  views:
+    main:
+      hot: 'Горячие'
+      expiring: 'Завершающиеся'
+      header: 'Главная страница'
+    auction:
+      remaining_label: 'до конца'

@@ -13,4 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require smart_listing
+//= require materialize
 //= require_tree .

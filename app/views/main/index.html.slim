@@ -1,0 +1,13 @@
+.container
+  .row
+    h3
+      = t 'views.main.hot'
+    - @hot_auctions.each do |auction|
+      .col.s3
+        = render partial: '/auctions/mini_profile', locals: {auction: auction}
+  .row
+    h3
+      = t 'views.main.expiring'
+    - @expiring_auctions.each do |auction|
+      .col.s3
+        = render partial: '/auctions/mini_profile', locals: {auction: auction}

@@ -1,0 +1,14 @@
+ul#nav-mobile.right.hide-on-med-and-down
+  li
+    / =link_to t('views.main.products')
+    =link_to t('views.main.products'), products_path
+  li
+    / =link_to t('views.main.auctions')
+    =link_to t('views.main.auctions'), auctions_path    
+  -if current_user
+    li
+      =link_to t('views.main.profile')
+      / =link_to t('views.main.profile'), profile_path(current_user)
+  -else
+    li
+      =link_to t('views.main.login'), new_user_session_path

@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+ @import "materialize/components/color";
+ $primary-color: color("blue", "darken-1") !default;
+ $secondary-color: color("yellow", "base") !default;
+ @import "materialize";
+ @import "material_icons";
+
+ .product-profile {
+ 	.card-title {
+ 		font-size: 14pt;
+ 	}
+ }
+
+ nav {
+ 	a.brand-logo#logo {
+ 		left: 1rem;
+ 	}
+ }

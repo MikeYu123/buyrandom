@@ -43,6 +43,7 @@ gem 'inherited_resources', git: 'https://github.com/activeadmin/inherited_resour
 gem 'devise'
 # Material-design assets
 gem 'materialize-sass'
+gem 'material_icons'
 # Better template engine
 gem 'slim'
 
@@ -50,7 +51,7 @@ gem 'smart_listing'
 
 
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'capistrano-rails', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
