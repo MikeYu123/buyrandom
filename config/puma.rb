@@ -7,7 +7,7 @@
 threads_count = ENV.fetch("RAILS_MAX_THREADS").to_i { 5 }.to_i
 threads threads_count, threads_count
 
-app_dir = File.expand_path("../..", __FILE__)
+app_dir = '/var/www/buyrandom'
 shared_dir = "#{app_dir}/shared"
 
 # Set up socket location
