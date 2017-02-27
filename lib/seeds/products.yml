@@ -36,5 +36,6 @@ products:
     name: Bosch MSM 6B700 блендер
     description: "Страна-изготовитель Китай"
     picture_url: "http://ozon-st.cdn.ngenix.net/multimedia/spare_covers/1012985277.jpg"
+    source: Ozon
     source_url: http://www.ozon.ru/context/detail/id/3204033/
     price: 2149.0

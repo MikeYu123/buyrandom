@@ -1,10 +1,10 @@
 .product-profile.card
   .card-image
-    = image_tag(auction.product.picture_url)
+    = image_tag(auction.product.picture_url, {class: 'responsive-img'})
   .card-content
     span.card-title
       = auction.product.name
     p
-      | #{auction.current_amount}/#{auction.target_amount}
+      = render_amounts(auction)
     p
-      | #{distance_of_time_in_words(auction.expires_at - DateTime.now)} #{t 'views.auction.remaining_label'}
+      = render_time(auction)

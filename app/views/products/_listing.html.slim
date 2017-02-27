@@ -1,0 +1,23 @@
+- unless smart_listing.empty?
+  table.bordered#products-listing
+    thead
+      tr
+        th
+        th.name= smart_listing.sortable t('views.product.name'), :name
+        th.description= smart_listing.sortable t('views.product.description'), :description
+        th.source= smart_listing.sortable t('views.product.source'), :source
+        th.price= smart_listing.sortable t('views.product.price'), :price
+    tbody
+      - smart_listing.collection.each do |product|
+        tr
+          td
+            .table-image
+              =image_tag(product.picture_url, {class: 'responsive-img'})
+          td= product.name
+          td= product.description.truncate_words(5)
+          td= link_to product.source, product.source_url
+          td= number_to_currency(product.price)
+
+  = smart_listing.paginate
+- else
+  p.warning No records!
