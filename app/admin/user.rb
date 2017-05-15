@@ -3,7 +3,7 @@ ActiveAdmin.register User do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-menu :if => -> { current_user.admin? }
+menu :if => -> { current_user&.admin? }
 permit_params :email, :password, :password_confirmation, :balance, :role, :avatar_url
 
 form do |f|
