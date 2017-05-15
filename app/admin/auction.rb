@@ -3,7 +3,7 @@ ActiveAdmin.register Auction do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :started_at, :expires_at, :product_ids
+permit_params :started_at, :expires_at, :product_ids, :current_amount, :target_amount
 #
 # or
 #
