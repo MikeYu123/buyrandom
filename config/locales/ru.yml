@@ -10,6 +10,7 @@ ru:
       login: 'Войти'
       logout: 'Выйти'
       profile: 'Профиль'
+      dashboard: 'Админка'
     auction:
       remaining: 'до конца'
       of: 'из'

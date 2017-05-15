@@ -2,5 +2,14 @@
   .card-image
     img src=@auction.picture_url
   .card-stacked
-    span.card-title.on-preview
+    .card-title.on-preview
       = @auction.name
+    .card-content
+      p.on-preview
+        = @auction.description
+      p.on-preview
+        = render_amounts(@auction)
+        .progress
+          .determinate style="width: #{render_progress(@auction)}"
+      p.on-preview
+        = render_time(@auction)

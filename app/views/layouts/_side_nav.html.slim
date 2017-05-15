@@ -9,7 +9,11 @@ ul#nav-mobile.right
     li
       =link_to t('views.main.profile')
     li
-      = link_to t('views.main.logout'), delete_user_session_path, method: :delete
+      = link_to t('views.main.logout'), destroy_user_session_path, method: :delete
+    - if current_user.role != 'member'
+      li
+        = link_to t('views.main.dashboard'), admin_root_path
+
       / =link_to t('views.main.profile'), profile_path(current_user)
       / , {class: set_active('profiles') }
   -else

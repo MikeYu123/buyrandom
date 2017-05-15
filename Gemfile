@@ -51,7 +51,7 @@ gem 'slim'
 
 gem 'smart_listing'
 
-
+gem 'devise-i18n-views'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

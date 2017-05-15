@@ -8,4 +8,9 @@ module AuctionsHelper
 	def render_time auction
 		"#{distance_of_time_in_words(auction.expires_at - DateTime.now)} #{t 'views.auction.remaining'}"
 	end
+
+	def render_progress auction
+	  progress_percentage = (100 * auction.current_amount) / auction.target_amount
+    number_to_currency(progress_percentage, precision: 0)
+  end
 end

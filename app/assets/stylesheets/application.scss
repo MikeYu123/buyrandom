@@ -11,6 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  * require_tree .
+ *= require auctions
  *= require_self
  */
 
@@ -57,9 +58,4 @@
  		}
  	}
  }
-
-  .card-title.on-preview
-  {
-      font-size: 32px;
-  }
 
