@@ -17,10 +17,12 @@
                   = message
         = f.hidden_field :product_id
         .row
-          = f.label :expires_at
-          = f.text_field :expires_at, value: l(@auction.expires_at, format: :short), disabled: true
+          .input-field
+            = f.label :expires_at
+            = f.text_field :expires_at, value: l(@auction.expires_at, format: :short), disabled: true
         .row
-          = f.label :target_amount
-          = f.text_field :target_amount, value: number_to_currency(@auction.target_amount, precision: 2), disabled: true
+          .input-field
+            = f.label :target_amount
+            = f.text_field :target_amount, value: number_to_currency(@auction.target_amount, precision: 2), disabled: true
         .actions
-          = f.submit t('.confirm')
+          = f.submit t('.confirm'), class: 'btn'

@@ -63,3 +63,12 @@
    margin: 20px;
  }
 
+ #place_bid_form {
+   margin-top: 15px;
+   span.success_message {
+     color: forestgreen;
+   }
+   span.error_message {
+     color: #B00100;
+   }
+ }

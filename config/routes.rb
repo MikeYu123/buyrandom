@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   devise_for :users
   root 'main#index'
   get 'main/index',to: 'main#index'
-  resources :auctions
+  resources :auctions do
+    member do
+      post :bid
+    end
+  end
   resources :products
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

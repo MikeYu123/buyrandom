@@ -2,7 +2,7 @@ class AuctionsController < ApplicationController
   include SmartListing::Helper::ControllerExtensions
   helper  SmartListing::Helper
 
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :bid]
 
   def index
     @auctions_scope = Auction.active.includes(:product)
@@ -24,5 +24,17 @@ class AuctionsController < ApplicationController
     @auction = AuctionService.new.create_auction(@product)
     @auction.update(user: current_user)
     redirect_to auction_path(@auction)
+  end
+
+  def bid
+    amount = params[:amount]
+    @auction = Auction.find(params[:auction_id])
+    @transaction_result = PlaceBidService.new(amount: amount, user: current_user, auction: @auction).call
+  rescue PlaceBidService::InactiveAuctionError
+    @auction.errors[:base] << t('auctions.form.errors.inactive_auction')
+  rescue PlaceBidService::InsufficientFundsError
+    @auction.errors[:base] << t('auctions.form.errors.insufficient_funds')
+  ensure
+    render 'auctions/show'
   end
 end

@@ -10,4 +10,18 @@ class User < ApplicationRecord
   def can_see_admin?
      manager? || admin?
   end
+
+  def has_enough_to_bid?(amount)
+    balance > amount
+  end
+
+  def widthraw amount
+    raise ArgumentError if balance < amount
+    update(balance: balance - amount)
+  end
+
+  def deposit amount
+    update(balance: balance + amount)
+  end
+
 end

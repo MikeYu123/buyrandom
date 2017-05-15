@@ -56,3 +56,14 @@ ru:
       error_caption: "возникло при сохранении:"
       confirm: "Подтвердить"
       header: "Начать аукцион"
+      errors:
+        inactive_auction: "Аукцион недоступен"
+        insufficient_funds: "Недостаточно средств на счету"
+    show:
+      form:
+        amount: 'Сумма'
+      place_bid: "Разместить ставку"
+      confirm: "Подтвердить"
+      amount: "Сумма"
+      error_title: "Ошибка:"
+      success_title: "Ставка успешно произведена!"
