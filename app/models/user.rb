@@ -6,4 +6,8 @@ class User < ApplicationRecord
          # :omniauthable, :confirmable
   audited
   enum role: [:member, :manager, :admin]
+
+  def can_see_admin?
+     manager? || admin?
+  end
 end

@@ -10,7 +10,7 @@ ul#nav-mobile.right
       =link_to t('views.main.profile')
     li
       = link_to t('views.main.logout'), destroy_user_session_path, method: :delete
-    - if current_user.role != 'member'
+    - if current_user.can_see_admin?
       li
         = link_to t('views.main.dashboard'), admin_root_path
 

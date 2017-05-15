@@ -11,6 +11,6 @@ module AuctionsHelper
 
 	def render_progress auction
 	  progress_percentage = (100 * auction.current_amount) / auction.target_amount
-    number_to_currency(progress_percentage, precision: 0)
+    number_to_percentage(progress_percentage, precision: 0)
   end
 end
