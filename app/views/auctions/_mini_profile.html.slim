@@ -8,3 +8,5 @@
       = render_amounts(auction)
     p
       = render_time(auction)
+  .card-action
+    = link_to t('views.auction.view_full'), auction_path(auction)

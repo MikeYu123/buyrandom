@@ -14,6 +14,15 @@ ru:
     auction:
       remaining: 'до конца'
       of: 'из'
+      view_full: "Подробнее"
+      header: "Аукционы"
+      no_match: 'Аукционов не найдено'
+      filter:
+        name: "Фильтр по названию"
+      name: "Название"
+      description: "Описание"
+      started_at: "Создан"
+      expires_at: "Завершается"
     product:
       filter:
         name: 'Фильтр по названию'
@@ -22,6 +31,9 @@ ru:
       description: 'Описание'
       source: 'Источник'
       price: 'Цена'
+      no_match: 'Товаров не найдено'
+      current_amount: "Собрано"
+      target_amount: "Необходимо"
     pagination:
       next: '<i class="material-icons">chevron_right</i>'
       previous: '<i class="material-icons">chevron_left</i>'
