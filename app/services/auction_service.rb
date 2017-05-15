@@ -9,4 +9,12 @@ class AuctionService
 			started_at: DateTime.now,
 			expires_at: DateTime.now + AUCTION_DURATION
 	end
+
+	def build_auction product
+		Auction.new product: product,
+									 current_amount: 0,
+									 target_amount: product.price * BUYRANDOM_COMMISSION,
+									 started_at: DateTime.now,
+									 expires_at: DateTime.now + AUCTION_DURATION
+	end
 end

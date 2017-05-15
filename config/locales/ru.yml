@@ -1,4 +1,13 @@
 ru:
+  activerecord:
+    models:
+      user: 'Пользователь'
+      auction: 'Аукцион'
+      product: 'Товар'
+    attributes:
+      auction:
+        expires_at: 'Завершится в'
+        target_amount: 'Требуемая сумма'
   app_name: 'BuyRandom'
   views:
     main:
@@ -34,8 +43,16 @@ ru:
       no_match: 'Товаров не найдено'
       current_amount: "Собрано"
       target_amount: "Необходимо"
+      buy: "Купить"
     pagination:
       next: '<i class="material-icons">chevron_right</i>'
       previous: '<i class="material-icons">chevron_left</i>'
       first: '<i class="material-icons">first_page</i>'
       last: '<i class="material-icons">last_page</i>'
+  auctions:
+    form:
+      expires_at: 'Завершается в:'
+      error: "ошибка"
+      error_caption: "возникло при сохранении:"
+      confirm: "Подтвердить"
+      header: "Начать аукцион"

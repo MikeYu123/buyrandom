@@ -20,7 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  views:
-    product:
-      current_amount: "Необходимо"
-      target_amount: "Необходимо"
+  auctions:
+    form:
+      error_caption: "prohibited auction from being saved:"
+      error: "error"

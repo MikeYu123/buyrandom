@@ -1,0 +1,8 @@
+.product-profile.card
+  .card-image
+    = image_tag(product.picture_url, {class: 'responsive-img'})
+  .card-content
+    .card-title
+      = product.name
+    .card-content
+      = product.description.truncate(1, separator: /[.?!;]/)

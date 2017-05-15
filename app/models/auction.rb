@@ -1,5 +1,6 @@
 class Auction < ApplicationRecord
   belongs_to :product
+  belongs_to :user
   audited
 
   delegate :picture_url, :name, :description, to: :product

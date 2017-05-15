@@ -21,6 +21,7 @@
           td= product.description.truncate_words(5)
           td= link_to product.source, product.source_url
           td= number_to_currency(product.price)
+          td= link_to t('views.product.buy'), new_auction_path(product_id: product.id)
   .center
     = smart_listing.paginate
 - else
