@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable #,
          # :omniauthable, :confirmable
   audited
+  enum role: [:member, :manager, :admin]
 end

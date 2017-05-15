@@ -5,11 +5,22 @@ ru:
       hot: 'Горячие'
       expiring: 'Завершающиеся'
       header: 'Главная страница'
+      products: 'Товары'
+      auctions: 'Аукционы'
+      login: 'Войти'
+      logout: 'Выйти'
+      profile: 'Профиль'
     auction:
       remaining: 'до конца'
       of: 'из'
     product:
+      filter:
+        name: 'Фильтр по названию'
       header: 'Товары'
+      name: 'Название'
+      description: 'Описание'
+      source: 'Источник'
+      price: 'Цена'
     pagination:
       next: '<i class="material-icons">chevron_right</i>'
       previous: '<i class="material-icons">chevron_left</i>'

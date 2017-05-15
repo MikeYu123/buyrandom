@@ -8,6 +8,8 @@ ul#nav-mobile.right
   -if current_user
     li
       =link_to t('views.main.profile')
+    li
+      = link_to t('views.main.logout'), delete_user_session_path, method: :delete
       / =link_to t('views.main.profile'), profile_path(current_user)
       / , {class: set_active('profiles') }
   -else
