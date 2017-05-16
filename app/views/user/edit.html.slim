@@ -1,0 +1,22 @@
+#edit_form
+  h5
+    = t('.header')
+  = form_tag user_update_path do
+    / TODO: errors
+    .input-field
+      = label_tag :email, t('.email')
+      = text_field_tag :email, @user.email, disabled: true
+    .input-field
+      = label_tag :avatar_url, t('.avatar_url')
+      = text_field_tag :avatar_url, @user.avatar_url
+    .input-field
+      = label_tag :username, t('.username')
+      = text_field_tag :username, @user.username
+    /.input-field
+    /  = label_tag :password, t('.password')
+    /  = password_field_tag :email, @user.password
+    /.input-field
+    /  = label_tag :password_confirmation, t('.password_confirmation')
+    /  = password_field_tag :email, @user.password_confirmation
+
+    = submit_tag t('.confirm'), class: 'btn'

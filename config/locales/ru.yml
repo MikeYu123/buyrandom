@@ -59,6 +59,7 @@ ru:
       errors:
         inactive_auction: "Аукцион недоступен"
         insufficient_funds: "Недостаточно средств на счету"
+        incorrect_amount: "Некорректная сумма"
     show:
       form:
         amount: 'Сумма'
@@ -67,3 +68,31 @@ ru:
       amount: "Сумма"
       error_title: "Ошибка:"
       success_title: "Ставка успешно произведена!"
+  users:
+    show:
+      profile: "Профиль"
+  user:
+    show:
+      profile: "Профиль"
+      email: "Email:"
+      balance: "Баланс:"
+      deposit: "Пополнить"
+      edit: "Редактировать"
+      logout: "Выйти"
+      reset_password: "Сменить пароль"
+    deposit:
+      header: "Пополнить баланс"
+      amount: "Сумма"
+      confirm: "Подтвердить"
+    edit:
+      header: "Обновить данные"
+      amount: "email"
+      username: "Имя пользователя"
+      avatar_url: "Аватар"
+      email: "Email"
+      confirm: "Подтвердить"
+    reset_password:
+      header: "Сменить пароль"
+      password: "Пароль"
+      password_confirmation: "Подтверждение пароля"
+      confirm: "Подтвердить"

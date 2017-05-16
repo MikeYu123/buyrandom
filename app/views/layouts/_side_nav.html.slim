@@ -7,7 +7,7 @@ ul#nav-mobile.right
     =link_to t('views.main.auctions'), auctions_path    
   -if current_user
     li
-      =link_to t('views.main.profile')
+      =link_to t('views.main.profile'), user_show_path
     li
       = link_to t('views.main.logout'), destroy_user_session_path, method: :delete
     - if current_user.can_see_admin?

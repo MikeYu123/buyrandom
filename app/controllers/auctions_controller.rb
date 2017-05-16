@@ -34,6 +34,8 @@ class AuctionsController < ApplicationController
     @auction.errors[:base] << t('auctions.form.errors.inactive_auction')
   rescue PlaceBidService::InsufficientFundsError
     @auction.errors[:base] << t('auctions.form.errors.insufficient_funds')
+  rescue PlaceBidService::IncorrectAmountError
+    @auction.errors[:base] << t('auctions.form.errors.incorrect_amount')
   ensure
     render 'auctions/show'
   end

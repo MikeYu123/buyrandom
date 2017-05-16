@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
+  get 'user/show'
+
+  get 'user/edit'
+
+  post 'user/update'
+
+  get 'user/reset_password'
+
+  get 'user/deposit'
+
   ActiveAdmin.routes(self)
-  devise_for :users
+  devise_for :user
   root 'main#index'
   get 'main/index',to: 'main#index'
   resources :auctions do

@@ -1,0 +1,9 @@
+#deposit_form
+  h5
+    = t('.header')
+  = form_tag user_update_path do
+    / TODO: errors
+    .input-field
+      = label_tag :deposit, t('.amount')
+      = text_field_tag :deposit
+    = submit_tag t('.confirm'), class: 'btn'

@@ -4,7 +4,7 @@ ActiveAdmin.register User do
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
 menu :if => -> { current_user&.admin? }
-permit_params :email, :password, :password_confirmation, :balance, :role, :avatar_url
+permit_params :email, :password, :password_confirmation, :balance, :role, :avatar_url, :username
 
 form do |f|
   f.inputs do
@@ -14,6 +14,7 @@ form do |f|
     f.input :balance
     f.input :role
     f.input :avatar_url
+    f.input :username
   end
   f.submit
 end
@@ -33,6 +34,7 @@ index do
   column :balance
   column :avatar_url
   column :uid
+  column :username
 end
 
 show do
@@ -43,6 +45,7 @@ show do
     row :avatar_url
     row :created_at
     row :updated_at
+    row :username
   end
 end
 #

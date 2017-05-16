@@ -9,10 +9,14 @@ class PlaceBidService
     @auction.transaction do
       if @auction.active?
         if @user.has_enough_to_bid? @amount
-          Operation.create(amount: @amount, source: @user, destination: @auction)
-          @user.widthraw(@amount)
-          @auction.deposit(@amount)
-          true
+          if @amount >= 0
+            Operation.create(amount: @amount, source: @user, destination: @auction)
+            @user.widthraw(@amount)
+            @auction.deposit(@amount)
+            true
+          else
+            raise IncorrectAmountError, 'Incorrect amount'
+          end
         else
           raise InsufficientFundsError, 'Not enough funds'
         end
@@ -22,6 +26,7 @@ class PlaceBidService
     end
   end
 
+  class IncorrectAmountError < StandardError ; end
   class InsufficientFundsError < StandardError ; end
   class InactiveAuctionError < StandardError ; end
 end
