@@ -59,7 +59,7 @@ ru:
       errors:
         inactive_auction: "Аукцион недоступен"
         insufficient_funds: "Недостаточно средств на счету"
-        incorrect_amount: "Некорректная сумма"
+        incorrect_amount: "Некорректная сумма ставки"
     show:
       form:
         amount: 'Сумма'

@@ -9,7 +9,7 @@ class PlaceBidService
     @auction.transaction do
       if @auction.active?
         if @user.has_enough_to_bid? @amount
-          if @amount >= 0
+          if @amount >= @auction.minimal_bid && @amount <= @auction.target_amount
             Operation.create(amount: @amount, source: @user, destination: @auction)
             @user.widthraw(@amount)
             @auction.deposit(@amount)

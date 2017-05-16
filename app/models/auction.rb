@@ -21,6 +21,14 @@ class Auction < ApplicationRecord
     update(current_amount: current_amount + amount)
   end
 
+  def remaining_amount
+    target_amount - current_amount
+  end
+
+  def minimal_bid
+    target_amount > 2500 ? 250 : target_amount * 0.1
+  end
+
   scope :active, -> { where('expires_at >= ?', DateTime.now)}
   scope :by_name, ->(name) { joins(:product).where('lower(products.name) LIKE ?', "%#{name.downcase}%") }
 end
