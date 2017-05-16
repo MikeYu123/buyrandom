@@ -27,7 +27,7 @@ class AuctionsController < ApplicationController
   end
 
   def bid
-    amount = params[:amount]
+    amount = params[:amount].to_f
     @auction = Auction.find(params[:auction_id])
     @transaction_result = PlaceBidService.new(amount: amount, user: current_user, auction: @auction).call
   rescue PlaceBidService::InactiveAuctionError
