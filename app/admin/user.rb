@@ -36,12 +36,14 @@ index do
 end
 
 show do
-  row :email
-  row :role
-  row :balance
-  row :avatar_url
-  row :created_at
-  row :updated_at
+  attributes_table do
+    row :email
+    row :role
+    row :balance
+    row :avatar_url
+    row :created_at
+    row :updated_at
+  end
 end
 #
 # or
