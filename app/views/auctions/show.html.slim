@@ -17,17 +17,20 @@
         = render 'auctions/place_bid_form', auction: @auction
       - else
         .row
-          h6
+          h5
             = t('.inactive')
-          h6
-            - if @auction.finished
-              - if @auction.winner == current_user
+          - if @auction.finished
+            - if @auction.winner == current_user
+              p#success_message
                 = t('.user_is_winner')
-              - elsif @auction.winner.nil?
+            - elsif @auction.winner.nil?
+              p#error_message
                 = t('.no_winner')
-              - else
-                = t('.user_is_not_winner')
             - else
+              p#error_message
+                = t('.user_is_not_winner')
+          - else
+            p
               = t('.no_winner_yet')
       = render 'auctions/bids', operations: @auction.bids.active
 

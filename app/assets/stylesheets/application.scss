@@ -67,9 +67,9 @@
    margin-top: 15px;
  }
 
-  .success_message {
+  .success_message, #success_message {
     color: forestgreen;
   }
-  .error_message {
+  .error_message, #error_message {
     color: #B00100;
   }
