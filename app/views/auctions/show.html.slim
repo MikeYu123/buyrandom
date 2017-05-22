@@ -23,6 +23,8 @@
             - if @auction.finished
               - if @auction.winner == current_user
                 = t('.user_is_winner')
+              - elsif @auction.winner.nil?
+                = t('.no_winner')
               - else
                 = t('.user_is_not_winner')
             - else
