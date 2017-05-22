@@ -27,4 +27,4 @@ h3
         .col.s1
           = link_to t('.logout'), destroy_user_session_path, method: :delete, class: 'btn'
       .row
-        = render 'user/bids', operations: @operations
+        = render 'user/bids', operations: @user.operations
