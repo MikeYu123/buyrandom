@@ -1,0 +1,2 @@
+class BidCancel < Operation
+end

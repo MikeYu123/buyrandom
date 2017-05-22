@@ -7,7 +7,7 @@ class User < ApplicationRecord
   audited
   enum role: [:member, :manager, :admin]
 
-  has_many :operations, as: :source
+  has_many :bids, as: :source
 
   def can_see_admin?
      manager? || admin?

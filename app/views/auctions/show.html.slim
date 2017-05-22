@@ -7,27 +7,25 @@
     .card-content
       p.on-preview
         = @auction.description
-      p.on-preview
-        = render_amounts(@auction)
-        .progress
-          .determinate style="width: #{render_progress(@auction)}"
-      p.on-preview
-        = render_time(@auction)
-      #place_bid_form
-        h5
-          = t('.place_bid')
-        = form_tag bid_auction_path(@auction) do
-          - if @auction.errors[:base].presence
-            - @auction.errors[:base].each do |error|
-              span.error_message
-                | #{t('.error_title')} #{error}
-          - elsif @transaction_result
-            span.success_message
-              = t('.success_title')
-          = hidden_field_tag :auction_id, @auction.id
-          .input-field
-            = label_tag :amount, t('.amount')
-            = text_field_tag :amount
-          = submit_tag t('.confirm'), class: 'btn'
-      = render 'auctions/bids', operations: @auction.operations
+      - if @auction.active?
+        p.on-preview
+          = render_amounts(@auction)
+          .progress
+            .determinate style="width: #{render_progress(@auction)}"
+        p.on-preview
+          = render_time(@auction)
+        = render 'auctions/place_bid_form', auction: @auction
+      - else
+        .row
+          h6
+            = t('.inactive')
+          h6
+            - if @auction.finished
+              - if @auction.winner == current_user
+                = t('.user_is_winner')
+              - else
+                = t('.user_is_not_winner')
+            - else
+              = t('.no_winner_yet')
+      = render 'auctions/bids', operations: @auction.bids
 

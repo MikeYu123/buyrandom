@@ -60,14 +60,19 @@ ru:
         inactive_auction: "Аукцион недоступен"
         insufficient_funds: "Недостаточно средств на счету"
         incorrect_amount: "Некорректная сумма ставки"
-    show:
-      form:
-        amount: 'Сумма'
+    place_bid_form:
       place_bid: "Разместить ставку"
       confirm: "Подтвердить"
       amount: "Сумма"
       error_title: "Ошибка:"
       success_title: "Ставка успешно произведена!"
+    show:
+      form:
+        amount: 'Сумма'
+      inactive: "Аукцион завершен"
+      no_winner_yet: "В ближайшее время мы определим победителя"
+      user_is_not_winner: "К сожалению, вы не одержали победу"
+      user_is_winner: "Вы победили в этом аукционе!"
     bids:
       bids: "Ставки"
       bidder: "Пользователь"
@@ -106,3 +111,5 @@ ru:
       bidder: "Товар"
       amount: "Сумма"
       created_at: "Время"
+    winning_notifications:
+      title: "Вы выиграли следующие аукционы:"

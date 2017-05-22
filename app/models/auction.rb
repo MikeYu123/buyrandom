@@ -4,7 +4,7 @@ class Auction < ApplicationRecord
   audited
 
   delegate :picture_url, :name, :description, to: :product
-  has_many :operations, as: :destination
+  has_many :bids, as: :destination
 
   def active?
     now = DateTime.now

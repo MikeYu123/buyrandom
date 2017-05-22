@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170516122342) do
+ActiveRecord::Schema.define(version: 20170522154935) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -35,8 +35,11 @@ ActiveRecord::Schema.define(version: 20170516122342) do
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.integer  "user_id"
+    t.boolean  "finished",       default: false
+    t.integer  "winner_id"
     t.index ["product_id"], name: "index_auctions_on_product_id"
     t.index ["user_id"], name: "index_auctions_on_user_id"
+    t.index ["winner_id"], name: "index_auctions_on_winner_id"
   end
 
   create_table "audits", force: :cascade do |t|
@@ -71,6 +74,19 @@ ActiveRecord::Schema.define(version: 20170516122342) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.string   "type"
+    t.integer  "user_id"
+    t.string   "source_type"
+    t.integer  "source_id"
+    t.boolean  "notified",    default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.index ["source_type", "source_id"], name: "index_notifications_on_source_type_and_source_id"
+    t.index ["type"], name: "index_notifications_on_type"
+    t.index ["user_id"], name: "index_notifications_on_user_id"
+  end
+
   create_table "operations", force: :cascade do |t|
     t.decimal  "amount"
     t.string   "source_type"
@@ -79,6 +95,7 @@ ActiveRecord::Schema.define(version: 20170516122342) do
     t.integer  "destination_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.string   "type"
     t.index ["destination_type", "destination_id"], name: "index_operations_on_destination_type_and_destination_id"
     t.index ["source_type", "source_id"], name: "index_operations_on_source_type_and_source_id"
   end

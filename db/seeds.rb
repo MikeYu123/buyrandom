@@ -8,5 +8,5 @@
 product_seeds = YAML.load_file(Rails.root.join 'lib', 'seeds', 'products.yml')
 products_array = product_seeds['products'].map{|_,v| v}
 products = Product.create products_array
-auction_service = AuctionService.new
+auction_service = InitAuctionService.new
 products.each{|product| auction_service.create_auction product}

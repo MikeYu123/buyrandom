@@ -1,4 +1,4 @@
-class AuctionService
+class InitAuctionService
 	BUYRANDOM_COMMISSION = 1.25
 	AUCTION_DURATION = 1.week
 

@@ -1,0 +1,6 @@
+- if notifications.presence
+  h5.success_message
+    = t('.title')
+  - notifications.each do |notification|
+    p.success_message
+      =link_to notification.source.name, auction_path(notification.source)
