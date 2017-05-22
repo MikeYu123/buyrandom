@@ -27,5 +27,5 @@
                 = t('.user_is_not_winner')
             - else
               = t('.no_winner_yet')
-      = render 'auctions/bids', operations: @auction.bids
+      = render 'auctions/bids', operations: @auction.bids.active
 

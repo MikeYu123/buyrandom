@@ -17,7 +17,7 @@ class User < ApplicationRecord
     balance > amount
   end
 
-  def widthraw amount
+  def withdraw amount
     raise ArgumentError if balance < amount
     update(balance: balance - amount)
   end

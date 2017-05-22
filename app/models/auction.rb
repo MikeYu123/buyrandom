@@ -11,9 +11,13 @@ class Auction < ApplicationRecord
     expires_at > now && started_at < now
   end
 
-  def widthraw amount
+  def withdraw amount
     raise ArgumentError if current_amount < amount || amount < 0
     update(current_amount: current_amount - amount)
+  end
+
+  def succeeded?
+    current_amount >= target_amount
   end
 
   def deposit amount
@@ -30,5 +34,8 @@ class Auction < ApplicationRecord
   end
 
   scope :active, -> { where('expires_at >= ?', DateTime.now)}
+  scope :inactive, -> { where.not('expires_at >= ?', DateTime.now) }
+  scope :finished, -> { where(finished: true) }
+  scope :unfinished, -> { where(finished: false) }
   scope :by_name, ->(name) { joins(:product).where('lower(products.name) LIKE ?', "%#{name.downcase}%") }
 end

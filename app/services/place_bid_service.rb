@@ -11,7 +11,7 @@ class PlaceBidService
         if @user.has_enough_to_bid? @amount
           if @amount >= @auction.minimal_bid && @amount <= @auction.target_amount
             Bid.create(amount: @amount, source: @user, destination: @auction)
-            @user.widthraw(@amount)
+            @user.withdraw(@amount)
             @auction.deposit(@amount)
             if @auction.current_amount > @auction.target_amount
               @auction.update(expires_at: [@auction.expires_at, DateTime.now + 1.day].max)

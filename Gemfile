@@ -49,6 +49,8 @@ gem 'material_icons'
 # Better template engine
 gem 'slim'
 
+gem 'whenever'
+
 gem 'smart_listing'
 
 gem 'devise-i18n-views'
