@@ -68,6 +68,11 @@ ru:
       amount: "Сумма"
       error_title: "Ошибка:"
       success_title: "Ставка успешно произведена!"
+    bids:
+      bids: "Ставки"
+      bidder: "Пользователь"
+      amount: "Сумма"
+      created_at: "Время"
   users:
     show:
       profile: "Профиль"
@@ -96,3 +101,8 @@ ru:
       password: "Пароль"
       password_confirmation: "Подтверждение пароля"
       confirm: "Подтвердить"
+    bids:
+      bids: "История ставок"
+      bidder: "Товар"
+      amount: "Сумма"
+      created_at: "Время"

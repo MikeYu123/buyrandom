@@ -11,7 +11,7 @@ class AuctionsController < ApplicationController
   end
 
   def show
-    @auction = Auction.includes(:product).find(params[:id])
+    @auction = Auction.includes(:product, operations: :source).find(params[:id])
   end
 
   def new

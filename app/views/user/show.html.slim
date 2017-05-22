@@ -15,9 +15,9 @@ h3
       .row
         .col.s3
           = t('.balance')
-        .col.s4
+        .col.s6
           = @user.balance
-        .col.s3
+        .col.s2
           = link_to t('.deposit'), user_deposit_path, class: 'btn'
       .row
         .col.s4
@@ -26,4 +26,5 @@ h3
           = link_to t('.reset_password'), user_reset_password_path, class: 'btn'
         .col.s1
           = link_to t('.logout'), destroy_user_session_path, method: :delete, class: 'btn'
-
+      .row
+        = render 'user/bids', operations: @operations

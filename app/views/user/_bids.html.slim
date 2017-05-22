@@ -1,0 +1,17 @@
+h4
+  = t('.bids')
+table.highlight
+  thead
+    tr
+      th.product= t('.bidder')
+      th.amount= t('.amount')
+      th.created_at= t('.created_at')
+  tbody
+  - operations.each do |operation|
+    tr
+      td
+        = link_to operation.destination.name, auction_path(operation.destination)
+      td
+        = operation.amount
+      td
+        = l operation.created_at, format: :short

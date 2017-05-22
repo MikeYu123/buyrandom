@@ -12,5 +12,9 @@ module AuctionsHelper
 	def render_progress auction
 	  progress_percentage = (100 * auction.current_amount) / auction.target_amount
     number_to_percentage(progress_percentage, precision: 0)
-  end
+	end
+
+	def bidder_name operation
+		operation.source.username || operation.source.email
+	end
 end

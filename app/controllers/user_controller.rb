@@ -3,6 +3,7 @@ class UserController < ApplicationController
 
   def show
     @user = current_user
+    @operations = @user.operations.includes(:destination)
   end
 
   def edit
