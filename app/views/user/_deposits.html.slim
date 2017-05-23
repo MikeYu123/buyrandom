@@ -1,16 +1,13 @@
 h4
-  = t('.bids')
+  = t('.deposits')
 table.highlight
   thead
     tr
-      th.product= t('.product')
       th.amount= t('.amount')
       th.created_at= t('.created_at')
   tbody
   - operations.each do |operation|
     tr
-      td
-        = link_to operation.destination.name, auction_path(operation.destination)
       td
         = operation.amount
       td

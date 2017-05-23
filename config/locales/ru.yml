@@ -115,8 +115,13 @@ ru:
       bidder: "Товар"
       amount: "Сумма"
       created_at: "Время"
+      product: "Товар"
     winning_notifications:
       title: "Вы выиграли следующие аукционы:"
+    deposits:
+      deposits: "История пополнений"
+      amount: "Сумма"
+      created_at: ""
   products:
     auctions:
       auctions: "Аукционы"

@@ -8,6 +8,7 @@ class User < ApplicationRecord
   enum role: [:member, :manager, :admin]
 
   has_many :bids, as: :source
+  has_many :deposits, as: :destination
 
   def can_see_admin?
      manager? || admin?
