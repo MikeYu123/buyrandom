@@ -7,14 +7,16 @@ class PaymentService
 
   def call
     @user.transaction do
-      payment = Payment.create(inplat_id: @inplat_id,
-                     amount: @amount,
-                     user: @user
-      )
-      Deposit.create(source: payment,
-                     destination: @user,
-                     amount: @amount)
-      @user.deposit(@amount)
+      unless Payment.find_by_inplat_id(@inplat_id)
+        payment = Payment.create(inplat_id: @inplat_id,
+                                                               amount: @amount,
+                                                               user: @user
+        )
+        Deposit.create(source: payment,
+                       destination: @user,
+                       amount: @amount)
+        @user.deposit(@amount)
+      end
     end
   end
 end

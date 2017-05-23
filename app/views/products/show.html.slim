@@ -1,0 +1,11 @@
+.card.horizontal
+  .card-image
+    img src=@product.picture_url
+  .card-stacked
+    .card-title.on-preview
+      = @product.name
+    .card-content
+      p.on-preview
+        = @product.description
+      = render 'products/auctions', auctions: @product.auctions.active.unfinished
+

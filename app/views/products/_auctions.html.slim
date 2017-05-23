@@ -1,0 +1,20 @@
+h4
+  = t('.auctions')
+table.highlight
+  thead
+    tr
+      th.started_at= t('views.product.started_at')
+      th.current_amount= t('views.product.current_amount')
+      th.target_amount= t('views.product.target_amount')
+      th.expires_at= t('views.product.expires_at')
+  tbody
+  - auctions.each do |auction|
+    tr
+      td
+        = link_to l(auction.started_at, format: :short), auction_path(auction)
+      td
+        = auction.current_amount
+      td
+        = auction.current_amount
+      td
+        = l auction.expires_at, format: :short

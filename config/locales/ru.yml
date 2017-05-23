@@ -44,6 +44,8 @@ ru:
       current_amount: "Собрано"
       target_amount: "Необходимо"
       buy: "Купить"
+      started_at: "Начало"
+      expires_at: "Окончание"
     pagination:
       next: '<i class="material-icons">chevron_right</i>'
       previous: '<i class="material-icons">chevron_left</i>'
@@ -91,6 +93,7 @@ ru:
       edit: "Редактировать"
       logout: "Выйти"
       reset_password: "Сменить пароль"
+      payment_succeeded: "Баланс успешно пополнен!"
     deposit:
       header: "Пополнить баланс"
       amount: "Сумма"
@@ -114,3 +117,6 @@ ru:
       created_at: "Время"
     winning_notifications:
       title: "Вы выиграли следующие аукционы:"
+  products:
+    auctions:
+      auctions: "Аукционы"

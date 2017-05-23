@@ -16,6 +16,9 @@ h3
         .col.s3
           = t('.balance')
         .col.s6
+          - if @payment
+            .success_message
+              =t('.payment_succeeded')
           = @user.balance
         .col.s2
           = link_to t('.deposit'), user_deposit_path, class: 'btn'
@@ -29,4 +32,4 @@ h3
       .row
         = render 'user/winning_notifications', notifications: @winning_notifications
       .row
-        = render 'user/bids', operations: @user.bids.active
+        = render 'user/bids', operations: @user.bids.where(type: 'Bid').active

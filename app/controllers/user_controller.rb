@@ -6,6 +6,7 @@ class UserController < ApplicationController
   INPLAT_HOST = 'https://demo-v-jet.inplat.ru/'
   API_KEY = 'AmGisIKyumi8S7c8xg2tZp1C'
   def show
+    @payment = params[:payment]
     @user = current_user
     @winning_notifications = AuctionWinningNotification.where(user: @user, notified: false).includes(source: :product)
   end
@@ -43,7 +44,7 @@ class UserController < ApplicationController
   end
 
   def pay_redirect
-    redirect_to user_show_path
+    redirect_to user_show_path(payment: true)
   end
 
   def inplat_link
