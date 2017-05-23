@@ -103,12 +103,13 @@ ActiveRecord::Schema.define(version: 20170523081111) do
   end
 
   create_table "payments", force: :cascade do |t|
-    t.string   "sign"
+    t.string   "inplat_id"
     t.boolean  "confirmed"
     t.integer  "user_id"
     t.integer  "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["inplat_id"], name: "index_payments_on_inplat_id"
     t.index ["user_id"], name: "index_payments_on_user_id"
   end
 

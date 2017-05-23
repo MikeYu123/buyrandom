@@ -3,7 +3,6 @@ class UserController < ApplicationController
   after_action :mark_notifications_as_notified, only: :show
   skip_before_action :verify_authenticity_token, only: [:pay_callback, :pay_redirect]
   SECRET_KEY = 'FyKagMwVtjgvqwFX'
-  ACCOUNT = 'test'
   INPLAT_HOST = 'https://demo-v-jet.inplat.ru/'
   API_KEY = 'AmGisIKyumi8S7c8xg2tZp1C'
   def show
@@ -30,23 +29,29 @@ class UserController < ApplicationController
   end
 
   def register_deposit
-    Payment.create(sign: params[:sign], user: current_user)
   end
 
   def pay_callback
+    code = params['code'].to_i
+    account = params['params']['account'].to_i
+    sum = (params['params']['sum'].to_f) / 100
+    id = params['id'].to_s
+    if code == 0
+      PaymentService.new(inplat_id: id, id: account, amount: sum).call
+    end
     render plain: 'OK'
   end
 
   def pay_redirect
-    render plain: 'OK'
+    redirect_to user_show_path
   end
 
   def inplat_link
     sum = params[:sum].to_f
-    message = "#{ACCOUNT}:#{sum}:"
+    message = "#{current_user.id}:#{sum}:"
     digest = OpenSSL::Digest.new('sha256')
     sign = OpenSSL::HMAC.hexdigest(digest, SECRET_KEY, message)
-    link = "#{INPLAT_HOST}?apikey=#{API_KEY}&theme=blue&title=#{URI.encode('Пополнить')}&sum=#{sum}&account=#{ACCOUNT}" \
+    link = "#{INPLAT_HOST}?apikey=#{API_KEY}&theme=blue&title=#{URI.encode('Пополнить')}&sum=#{sum}&account=#{current_user.id}" \
       "&sign=#{sign}"
     render plain: link
   end
@@ -56,8 +61,6 @@ class UserController < ApplicationController
   def mark_notifications_as_notified
     @winning_notifications.update_all(notified: true)
   end
-
-
 
   def user_params
     params.permit(:email, :password, :password_confirmation, :avatar_url, :username)
