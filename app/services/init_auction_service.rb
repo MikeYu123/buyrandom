@@ -1,5 +1,5 @@
 class InitAuctionService
-	BUYRANDOM_COMMISSION = 1.25
+	BUYRANDOM_COMMISSION = 1.1
 	AUCTION_DURATION = 1.week
 
 	def create_auction product
