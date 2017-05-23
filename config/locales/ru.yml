@@ -120,3 +120,5 @@ ru:
   products:
     auctions:
       auctions: "Аукционы"
+    show:
+      new_auction: "Купить"
