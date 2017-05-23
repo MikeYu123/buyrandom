@@ -1,6 +1,7 @@
 class UserController < ApplicationController
   before_action :authenticate_user!
   after_action :mark_notifications_as_notified, only: :show
+  skip_before_action :verify_authenticity_token, only: [:pay_callback, :pay_redirect]
   SECRET_KEY = 'FyKagMwVtjgvqwFX'
   ACCOUNT = 'test'
   INPLAT_HOST = 'https://demo-v-jet.inplat.ru/'
