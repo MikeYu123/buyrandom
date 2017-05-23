@@ -11,7 +11,11 @@ Rails.application.routes.draw do
 
   post 'user/pay_callback'
 
-  post 'user/pay_redirect'
+  get 'user/pay_redirect'
+
+  post 'user/register_deposit'
+
+  get 'user/inplat_link'
 
   ActiveAdmin.routes(self)
   devise_for :user

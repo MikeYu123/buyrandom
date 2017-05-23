@@ -15,3 +15,23 @@
 //= require smart_listing
 //= require materialize
 //= require_tree .
+
+function inplat_link(sum)  {
+    return $.ajax('/user/inplat_link', {
+        data: {
+            sum: sum
+        },
+        async: false
+    }).responseText
+};
+
+$(document).ready(function () {
+    if ($('#deposit').length > 0) {
+        $('#deposit').on('input', function (e) {
+            sum = parseFloat(this.value);
+            $('#inplat_invoke_btn').attr('href', inplat_link(sum));
+        });
+        $('#inplat_invoke_btn').on('click', function(e){
+        })
+    }
+});

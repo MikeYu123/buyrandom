@@ -1,7 +1,10 @@
 class UserController < ApplicationController
   before_action :authenticate_user!
   after_action :mark_notifications_as_notified, only: :show
-
+  SECRET_KEY = 'FyKagMwVtjgvqwFX'
+  ACCOUNT = 'test'
+  INPLAT_HOST = 'https://demo-v-jet.inplat.ru/'
+  API_KEY = 'AmGisIKyumi8S7c8xg2tZp1C'
   def show
     @user = current_user
     @winning_notifications = AuctionWinningNotification.where(user: @user, notified: false).includes(source: :product)
@@ -25,6 +28,10 @@ class UserController < ApplicationController
   def deposit
   end
 
+  def register_deposit
+    Payment.create(sign: params[:sign], user: current_user)
+  end
+
   def pay_callback
 
   end
@@ -33,11 +40,23 @@ class UserController < ApplicationController
 
   end
 
+  def inplat_link
+    sum = params[:sum].to_f
+    message = "#{ACCOUNT}:#{sum}:"
+    digest = OpenSSL::Digest.new('sha256')
+    sign = OpenSSL::HMAC.hexdigest(digest, SECRET_KEY, message)
+    link = "#{INPLAT_HOST}?apikey=#{API_KEY}&theme=blue&title=#{URI.encode('Пополнить')}&sum=#{sum}&account=#{ACCOUNT}" \
+      "&sign=#{sign}"
+    render plain: link
+  end
+
   private
 
   def mark_notifications_as_notified
     @winning_notifications.update_all(notified: true)
   end
+
+
 
   def user_params
     params.permit(:email, :password, :password_confirmation, :avatar_url, :username)

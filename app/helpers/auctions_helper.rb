@@ -19,6 +19,6 @@ module AuctionsHelper
 	end
 
 	def inplat_link
-		'https://demo-v-jet.inplat.ru/?apikey=AmGisIKyumi8S7c8xg2tZp1C&theme=blue&title=&account=test&sum=100&sign=ea9149ca4d75f970ab8c346b3687f93a16b76dad3d4d289313ccee665a3e602c'
+		''
 	end
 end

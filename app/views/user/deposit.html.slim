@@ -6,7 +6,9 @@
     .input-field
       = label_tag :deposit, t('.amount')
       = text_field_tag :deposit
-    = link_to t('.confirm'), inplat_link, 'data-method': 'modal', class: 'btn inplat-pay', id: 'inplat_invoke_btn'
+    .row
+      .col.s6
+        = link_to t('.confirm'), inplat_link, 'data-method': 'modal', class: 'btn inplat-pay', id: 'inplat_invoke_btn'
 javascript:
   var s=document.createElement("script");
   s.type="text/javascript";
