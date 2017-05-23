@@ -9,6 +9,10 @@ Rails.application.routes.draw do
 
   get 'user/deposit'
 
+  post 'user/pay_callback'
+
+  post 'user/pay_redirect'
+
   ActiveAdmin.routes(self)
   devise_for :user
   root 'main#index'

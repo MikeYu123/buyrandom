@@ -25,6 +25,14 @@ class UserController < ApplicationController
   def deposit
   end
 
+  def pay_callback
+
+  end
+
+  def pay_redirect
+
+  end
+
   private
 
   def mark_notifications_as_notified

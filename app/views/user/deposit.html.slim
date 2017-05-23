@@ -6,7 +6,7 @@
     .input-field
       = label_tag :deposit, t('.amount')
       = text_field_tag :deposit
-    = link_to t('.confirm'), 'https://demo-v-jet.inplat.ru/?', 'data-method': 'modal', class: 'btn inplat-pay', id: 'inplat_invoke_btn', apikey: 'df235jfsnks380sdj382c', account: 'hhjkl', sum: 1212, title: 'Оплата проезда', sign: '4a88acd16eca0ce7f4c9e2dd23cf8ba238163d57'
+    = link_to t('.confirm'), inplat_link, 'data-method': 'modal', class: 'btn inplat-pay', id: 'inplat_invoke_btn'
 javascript:
   var s=document.createElement("script");
   s.type="text/javascript";
