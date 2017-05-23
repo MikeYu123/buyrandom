@@ -1,5 +1,5 @@
 class UserController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:pay_callback, :pay_redirect]
   after_action :mark_notifications_as_notified, only: :show
   skip_before_action :verify_authenticity_token, only: [:pay_callback, :pay_redirect]
   SECRET_KEY = 'FyKagMwVtjgvqwFX'
