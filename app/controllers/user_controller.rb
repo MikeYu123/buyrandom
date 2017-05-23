@@ -34,11 +34,11 @@ class UserController < ApplicationController
   end
 
   def pay_callback
-
+    render plain 'OK'
   end
 
   def pay_redirect
-
+    render plain 'OK'
   end
 
   def inplat_link
