@@ -32,6 +32,7 @@ ru:
       description: "Описание"
       started_at: "Создан"
       expires_at: "Завершается"
+      result: "Результат"
     product:
       filter:
         name: 'Фильтр по названию'
@@ -81,6 +82,9 @@ ru:
       bidder: "Пользователь"
       amount: "Сумма"
       created_at: "Время"
+    results:
+      you_won: "Вы победили"
+      you_lost: "Вы проиграли"
   users:
     show:
       profile: "Профиль"
@@ -94,6 +98,9 @@ ru:
       logout: "Выйти"
       reset_password: "Сменить пароль"
       payment_succeeded: "Баланс успешно пополнен!"
+      expired_auctions: "Прошедшие аукционы"
+      current_auctions: "Текущие аукционы"
+      bids: "Ставки"
     deposit:
       header: "Пополнить баланс"
       amount: "Сумма"

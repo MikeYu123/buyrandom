@@ -1,0 +1,34 @@
+= smart_listing_controls_for(:expiring_auctions) do
+  .input-field
+    =text_field_tag :filter_name, '', class: "search"
+    =label_tag :filter_name, t('views.auction.filter.name')
+- unless smart_listing.empty?
+  table.bordered#auctions-listing
+    thead
+      tr
+        th
+        th.name= smart_listing.sortable t('views.auction.name'), :name
+        th.description= t('views.auction.description')
+        th.started_at= smart_listing.sortable t('views.auction.started_at'), :started_at
+        /TODO: views.product???
+        th.expires_at= smart_listing.sortable t('views.auction.expires_at'), :expires_at
+        th.current_amount= smart_listing.sortable t('views.product.current_amount'), :current_amount
+        th.target_amount= smart_listing.sortable t('views.product.target_amount'), :target_amount
+        th.result = t('views.auction.result')
+    tbody
+      - smart_listing.collection.each do |auction|
+        tr
+          td
+            .table-image
+              =image_tag(auction.picture_url, {class: 'responsive-img'})
+          td= link_to auction.name, auction_path(auction)
+          td= auction.description.truncate_words(5)
+          td= l auction.started_at, format: :short
+          td= l auction.expires_at, format: :short
+          td= number_to_currency(auction.current_amount)
+          td= number_to_currency(auction.target_amount)
+          td= result(auction)
+  .center
+    = smart_listing.paginate
+- else
+  p.warning=t('views.auction.no_match')

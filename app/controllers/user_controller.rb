@@ -1,14 +1,23 @@
 class UserController < ApplicationController
+  include SmartListing::Helper::ControllerExtensions
+  helper  SmartListing::Helper
   before_action :authenticate_user!, except: [:pay_callback, :pay_redirect]
   after_action :mark_notifications_as_notified, only: :show
   skip_before_action :verify_authenticity_token, only: [:pay_callback, :pay_redirect]
   SECRET_KEY = 'FyKagMwVtjgvqwFX'
   INPLAT_HOST = 'https://demo-v-jet.inplat.ru/'
   API_KEY = 'AmGisIKyumi8S7c8xg2tZp1C'
+
   def show
     @payment = params[:payment]
     @user = current_user
-    @winning_notifications = AuctionWinningNotification.where(user: @user, notified: false).includes(source: :product)
+    @winning_notifications = winning_notifications @user
+    auctions = auctions(@user)
+    now = DateTime.now
+    @expired_auctions = auctions.where('expires_at <= ?', now)
+    smart_listing_create(:expired_auctions, @expired_auctions, partial: "user/expired_auctions_listing")
+    @current_auctions = auctions.where('expires_at > ?', now)
+    smart_listing_create(:current_auctions, @current_auctions, partial: "user/current_auctions_listing")
   end
 
   def edit
@@ -61,6 +70,15 @@ class UserController < ApplicationController
 
   def mark_notifications_as_notified
     @winning_notifications.update_all(notified: true)
+  end
+
+  # TODO move to query objects & add tests
+  def auctions(user)
+    Auction.joins(:bids).merge(Bid.where(source: user))
+  end
+
+  def winning_notifications(user)
+    AuctionWinningNotification.where(user: user, notified: false).includes(source: :product)
   end
 
   def user_params

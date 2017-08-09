@@ -11,7 +11,7 @@
         p.on-preview
           = render_amounts(@auction)
           .progress
-            .determinate style="width: #{render_progress(@auction)}"
+            .determinate style="width: #{render_money_progress(@auction)}"
         p.on-preview
           = render_time(@auction)
         = render 'auctions/place_bid_form', auction: @auction

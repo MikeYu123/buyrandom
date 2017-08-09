@@ -31,10 +31,21 @@ h3
           = link_to t('.logout'), destroy_user_session_path, method: :delete, class: 'btn'
       .row
         = render 'user/winning_notifications', notifications: @winning_notifications
-      - if @user.bids.active.length > 0
+
+      - if @expired_auctions.present?
         .row
+          h4= t('.expired_auctions')
+          = smart_listing_render(:expired_auctions)
+
+      - if @current_auctions.present?
+        .row
+          h4= t('.current_auctions')
+          = smart_listing_render(:current_auctions)
+      - if @user.bids.active.present?
+        .row
+          h4= t('.bids')
           = render 'user/bids', operations: @user.bids.active
-      - if @user.deposits.length > 0
+      - if @user.deposits.present?
         .row
           = render 'user/deposits', operations: @user.deposits
 
