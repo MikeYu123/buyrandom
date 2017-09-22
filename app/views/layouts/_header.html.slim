@@ -1,6 +1,9 @@
 nav
-  .nav-wrapper
-    a.brand-logo.left#logo href="/"
-      i.material-icons loyalty
+  .nav-wrapper.container
+    a.button-collapse data-activates='nav-mobile' href='#'
+      i.material-icons menu
+    a.brand-logo.center-on-small-only#logo href="/"
+      i.material-icons monetization_on
       = t('app_name')
     =render 'layouts/side_nav'
+    =render 'layouts/nav_panel'

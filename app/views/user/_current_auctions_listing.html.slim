@@ -3,7 +3,7 @@
     =text_field_tag :filter_name, '', class: "search"
     =label_tag :filter_name, t('views.auction.filter.name')
 - unless smart_listing.empty?
-  table.bordered#auctions-listing
+  table.responsive-table.bordered#auctions-listing
     thead
       tr
         th

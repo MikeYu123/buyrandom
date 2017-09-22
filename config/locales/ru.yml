@@ -8,7 +8,7 @@ ru:
       auction:
         expires_at: 'Завершится в'
         target_amount: 'Требуемая сумма'
-  app_name: 'BuyRandom'
+  app_name: 'Nickle'
   views:
     main:
       hot: 'Горячие'
@@ -134,3 +134,7 @@ ru:
       auctions: "Аукционы"
     show:
       new_auction: "Купить"
+  landing:
+    header: "Заходите к нам и несите нам свои деньги."
+    description: "Вы может что-то и получите. Но это неточно."
+    text1: "Покупайте технику, презервативы и носки, тратя в разы меньше"

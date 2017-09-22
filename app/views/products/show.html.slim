@@ -1,6 +1,6 @@
 .card.horizontal
   .card-image
-    img src=@product.picture_url
+    img.responsive-img src=@product.picture_url
   .card-stacked
     .card-title.on-preview
       = @product.name
@@ -9,5 +9,5 @@
         = @product.description
       p
         = link_to t('.new_auction'), new_auction_path(product_id: @product.id)
-      = render 'products/auctions', auctions: @product.auctions.active.unfinished
+      = render 'products/products', auctions: @product.auctions.active.unfinished
 

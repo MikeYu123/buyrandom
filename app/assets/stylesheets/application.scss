@@ -28,21 +28,57 @@
  	}
  }
 
- nav {
- 	a.brand-logo#logo {
- 		left: 1rem;
- 	}
+ h2 {
+   font-size: 2.1em;
  }
 
-	.pagination{
-		li.first, li.last, li.prev, li.next_page {
-			width: initial;
-      a {
-				// width: initial;
-				padding: 0
-			}
-		}
-	} 
+ .parallax-container {
+   &.landing-parallax {
+     height: 400px;
+   }
+   width: 100%;
+ }
+
+ .landing-texts{
+   .row .col {
+     margin-top: 30px;
+   }
+ }
+
+ nav {
+   .nav-avatar {
+     width: 45px;
+     height: 45px;
+     margin-top: 10px;
+     margin-right: 5px;
+   }
+ 	a.brand-logo#logo {
+ 		//left: 1rem;
+ 	}
+   .side-nav {
+     width: 50%;
+     li {
+       a {
+         padding-left: 30px;
+       }
+     }
+     .logo-box {
+       width: 80%;
+       margin: 10px 10%;
+     }
+   }
+    //height: 100px
+ }
+
+  .pagination{
+      li.first, li.last, li.prev, li.next_page {
+          width: initial;
+    a {
+              // width: initial;
+              padding: 0
+          }
+      }
+  }
  table {
  	tr {
  		td {

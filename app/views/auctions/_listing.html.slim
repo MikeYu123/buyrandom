@@ -7,11 +7,11 @@
     thead
       tr
         th
-        th.name= smart_listing.sortable t('views.auction.name'), :name
-        th.description= t('views.auction.description')
-        th.started_at= smart_listing.sortable t('views.auction.started_at'), :started_at
+        th.name= t('views.auction.name')
+        th.hide-on-med-and-down.description= t('views.auction.description')
+        th.hide-on-med-and-down.started_at= smart_listing.sortable t('views.auction.started_at'), :started_at
         th.expires_at= smart_listing.sortable t('views.auction.expires_at'), :expires_at
-        th.current_amount= smart_listing.sortable t('views.product.current_amount'), :current_amount
+        th.hide-on-med-and-down.current_amount= smart_listing.sortable t('views.product.current_amount'), :current_amount
         th.target_amount= smart_listing.sortable t('views.product.target_amount'), :target_amount
     tbody
       - smart_listing.collection.each do |auction|
@@ -20,11 +20,11 @@
             .table-image
               =image_tag(auction.picture_url, {class: 'responsive-img'})
           td= link_to auction.name, auction_path(auction)
-          td= auction.description.truncate_words(5)
-          td= l auction.started_at, format: :short
+          td.hide-on-med-and-down= auction.description.truncate_words(5)
+          td.hide-on-med-and-down= l auction.started_at, format: :short
           td= l auction.expires_at, format: :short
-          td= number_to_currency(auction.current_amount)
-          td= number_to_currency(auction.target_amount)
+          td.hide-on-med-and-down= number_to_currency(auction.current_amount, precision: 0)
+          td= number_to_currency(auction.target_amount, precision: 0)
   .center
     = smart_listing.paginate
 - else

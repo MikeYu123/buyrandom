@@ -34,4 +34,6 @@ $(document).ready(function () {
         $('#inplat_invoke_btn').on('click', function(e){
         })
     }
+  $(".button-collapse").sideNav();
+  $('.parallax').parallax();
 });

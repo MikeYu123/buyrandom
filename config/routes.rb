@@ -19,8 +19,10 @@ Rails.application.routes.draw do
 
   ActiveAdmin.routes(self)
   devise_for :user
-  root 'main#index'
-  get 'main/index',to: 'main#index'
+  root 'main#landing'
+  # root 'main#index'
+  get 'index',to: 'main#index'
+
   resources :auctions do
     member do
       post :bid

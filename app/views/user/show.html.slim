@@ -2,7 +2,7 @@ h3
   = t('.profile')
 .card.horizontal
   .card-image
-    img src= @user.avatar_url
+    img.responsive-img src= @user.avatar_url
   .card-stacked
     .card-title.on-preview
       = @user.username
@@ -34,17 +34,20 @@ h3
 
       - if @expired_auctions.present?
         .row
-          h4= t('.expired_auctions')
-          = smart_listing_render(:expired_auctions)
+          .col.s12
+            h4= t('.expired_auctions')
+            = smart_listing_render(:expired_auctions)
 
       - if @current_auctions.present?
         .row
-          h4= t('.current_auctions')
-          = smart_listing_render(:current_auctions)
+          .col.s12
+            h4= t('.current_auctions')
+            = smart_listing_render(:current_auctions)
       - if @user.bids.active.present?
         .row
-          h4= t('.bids')
-          = render 'user/bids', operations: @user.bids.active
+          .col.s12
+            h4= t('.bids')
+            = render 'user/bids', operations: @user.bids.active
       - if @user.deposits.present?
         .row
           = render 'user/deposits', operations: @user.deposits

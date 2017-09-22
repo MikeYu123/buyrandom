@@ -4,4 +4,6 @@ class MainController < ApplicationController
 		@hot_auctions = service.fetch_hot_auctions
 		@expiring_auctions = service.fetch_expiring_auctions
 	end
+
+	def landing; end
 end
