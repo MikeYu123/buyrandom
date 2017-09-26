@@ -5,5 +5,9 @@ class MainController < ApplicationController
 		@expiring_auctions = service.fetch_expiring_auctions
 	end
 
-	def landing; end
+	def landing
+    if current_user
+      return redirect_to :index
+    end
+  end
 end

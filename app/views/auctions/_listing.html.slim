@@ -6,7 +6,7 @@
   table.bordered#auctions-listing
     thead
       tr
-        th
+        th.hide-on-med-and-down
         th.name= t('views.auction.name')
         th.hide-on-med-and-down.description= t('views.auction.description')
         th.hide-on-med-and-down.started_at= smart_listing.sortable t('views.auction.started_at'), :started_at
@@ -16,7 +16,7 @@
     tbody
       - smart_listing.collection.each do |auction|
         tr
-          td
+          td.hide-on-med-and-down
             .table-image
               =image_tag(auction.picture_url, {class: 'responsive-img'})
           td= link_to auction.name, auction_path(auction)
