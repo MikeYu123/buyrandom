@@ -34,25 +34,27 @@ h3
         .collapsible-body
           = render 'user/profile/reset_password'
 
-
-      .row
-        = render 'user/winning_notifications', notifications: @winning_notifications
+      /.row
+      /  = render 'user/winning_notifications', notifications: @winning_notifications
 
       - if @expired_auctions.present?
-        .row
-          .col.s12
-            h4= t('.expired_auctions')
+        li
+          .collapsible-header
+            =t('.expired_auctions')
+          .collapsible-body
             = smart_listing_render(:expired_auctions)
 
       - if @current_auctions.present?
-        .row
-          .col.s12
-            h4= t('.current_auctions')
+        li
+          .collapsible-header
+            = t('.current_auctions')
+          .collapsible-body
             = smart_listing_render(:current_auctions)
       - if @user.bids.active.present?
-        .row
-          .col.s12
-            h4= t('.bids')
+        li
+          .collapsible-header
+            = t('.bids')
+          .collapsible-body
             = render 'user/bids', operations: @user.bids.active
       - if @user.deposits.present?
         .row
