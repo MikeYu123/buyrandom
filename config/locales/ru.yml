@@ -102,6 +102,7 @@ ru:
       current_auctions: "Текущие аукционы"
       bids: "Ставки"
       customize: "Параметры"
+      deposits: "История пополнений"
     deposit:
       header: "Пополнить баланс"
       amount: "Сумма"

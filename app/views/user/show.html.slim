@@ -57,7 +57,10 @@ h3
           .collapsible-body
             = render 'user/bids', operations: @user.bids.active
       - if @user.deposits.present?
-        .row
-          = render 'user/deposits', operations: @user.deposits
+        li
+          .collapsible-header
+            = t('.deposits')
+          .collapsible-body
+            = render 'user/deposits', operations: @user.deposits
     .card-action.center
       = link_to t('.logout'), destroy_user_session_path, method: :delete
