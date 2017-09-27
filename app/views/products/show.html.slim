@@ -7,7 +7,7 @@
     .card-content
       p.on-preview
         = @product.description
-      p
-        = link_to t('.new_auction'), new_auction_path(product_id: @product.id)
+      p.center-on-small-only
+        = link_to t('.new_auction'), new_auction_path(product_id: @product.id), class: 'btn waves-effect waves-light'
       = render 'products/products', auctions: @product.auctions.active.unfinished
 

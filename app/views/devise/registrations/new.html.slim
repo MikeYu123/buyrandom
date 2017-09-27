@@ -2,18 +2,20 @@ h2
   = t('.sign_up', :default => "Sign up")
 = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
   = devise_error_messages!
-  div
-    = f.label :email
-    br
-    = f.email_field :email
-  div
-    = f.label :password
-    br
-    = f.password_field :password
-  div
-    = f.label :password_confirmation
-    br
-    = f.password_field :password_confirmation
-  div
-    = f.submit t('.sign_up', :default => "Sign up")
-= render "devise/shared/links"
+  .row
+    .input-field.col.s12
+      = f.label :email
+      = f.email_field :email
+  .row
+    .input-field.col.s12.m6
+      = f.label :password
+      = f.password_field :password
+    .input-field.col.s12.m6
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation
+  .center-on-small-only
+    .btn.waves-effect.waves-light
+      = f.submit t('.sign_up', :default => "Sign up")
+  br
+.center-on-small-only
+  = render "devise/shared/links"

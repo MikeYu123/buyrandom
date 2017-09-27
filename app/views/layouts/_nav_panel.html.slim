@@ -1,7 +1,7 @@
 ul.right.hide-on-med-and-down
   -if current_user
     li
-      =image_tag current_user.avatar_url, class: 'nav-avatar circle z-depth-3'
+      =image_tag (current_user.avatar_url || ''), class: 'nav-avatar circle z-depth-3'
   li class= set_active('products')
     / =link_to t('views.main.products')
     =link_to t('views.main.products'), products_path
