@@ -1,33 +1,33 @@
 h3
   = t('.profile')
-.card.horizontal
-  .card-image
+.card.row
+  .card-image.col.m4.s12
     img.responsive-img src= @user.avatar_url
-  .card-stacked
+  .card-stacked.col.m8.s12
     .card-title.on-preview
       = @user.username
     .card-content
       .row
-        .col.s3
+        .col.s4
           = t('.email')
-        .col.s6
+        .col.s8
           = @user.email
       .row
-        .col.s3
+        .col.s4
           = t('.balance')
-        .col.s6
+        .col.s5
           - if @payment
             .success_message
               =t('.payment_succeeded')
           = @user.balance
-        .col.s2
+        .col.s3
           = link_to t('.deposit'), user_deposit_path, class: 'btn'
       .row
-        .col.s4
+        .col.s12
           = link_to t('.edit'), user_edit_path, class: 'btn'
-        .col.s5
+        .col.s12
           = link_to t('.reset_password'), user_reset_password_path, class: 'btn'
-        .col.s1
+        .col.s12
           = link_to t('.logout'), destroy_user_session_path, method: :delete, class: 'btn'
       .row
         = render 'user/winning_notifications', notifications: @winning_notifications
