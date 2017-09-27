@@ -6,6 +6,22 @@ h3
   .card-stacked.col.m8.s12
     .card-title.on-preview
       = @user.username
+    br
+    .collection
+      .collection-item
+        = t('.email')
+        .right
+          = @user.email
+      - if @payment
+        .collection-item.dismissable
+          .green-text
+            = t('.payment_succeeded')
+      .collection-item
+        = t('.balance')
+        .right
+          = @user.balance
+          span.badge.new data-badge-caption= t('.deposit')
+
     .card-content
       .row
         .col.s4
@@ -18,7 +34,6 @@ h3
         .col.s5
           - if @payment
             .success_message
-              =t('.payment_succeeded')
           = @user.balance
         .col.s3
           = link_to t('.deposit'), user_deposit_path, class: 'btn'

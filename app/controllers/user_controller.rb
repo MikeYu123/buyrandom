@@ -33,6 +33,7 @@ class UserController < ApplicationController
   end
 
   def reset_password
+    @user = current_user
   end
 
   def deposit
