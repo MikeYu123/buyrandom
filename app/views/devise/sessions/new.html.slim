@@ -15,7 +15,8 @@ h2
       = f.label :remember_me
     br
   div.center-on-small-only
-    = f.submit t('.sign_in', :default => "Sign in"), class: 'btn waves-effect waves-light'
+    .btn.waves-effect.waves-light
+      = f.submit t('.sign_in', :default => "Sign in")
   br
 .center-on-small-only
   = render "devise/shared/links"

@@ -1,10 +1,10 @@
 h4
   = t('.auctions')
-table.responsive-table.highlight
+table.highlight
   thead
     tr
       th.started_at= t('views.product.started_at')
-      th.current_amount= t('views.product.current_amount')
+      th.current_amount.hide-on-med-and-down= t('views.product.current_amount')
       th.target_amount= t('views.product.target_amount')
       th.expires_at= t('views.product.expires_at')
   tbody
@@ -12,7 +12,7 @@ table.responsive-table.highlight
     tr
       td
         = link_to l(auction.started_at, format: :short), auction_path(auction)
-      td
+      td.hide-on-med-and-down
         = auction.current_amount
       td
         = auction.current_amount

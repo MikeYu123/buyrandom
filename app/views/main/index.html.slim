@@ -3,8 +3,9 @@
     h3.heading
       = t 'views.main.hot'
     - @hot_auctions.each do |auction|
-      .col.m6.l3
-        = render partial: '/auctions/mini_profile', locals: {auction: auction}
+      .center-align
+        .col.m6.l3
+          = render partial: '/auctions/mini_profile', locals: {auction: auction}
 -if @expiring_auctions.presence
   .row
     h3.heading

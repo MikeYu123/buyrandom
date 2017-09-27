@@ -1,7 +1,7 @@
-.card.horizontal
-  .card-image
+.card.row
+  .card-image.col.l6.m12
     img.responsive-img src=@auction.picture_url
-  .card-stacked
+  .card-stacked.col.l6.m12
     .card-title.on-preview
       = @auction.name
     .card-content
@@ -16,21 +16,20 @@
           = render_time(@auction)
         = render 'auctions/place_bid_form', auction: @auction
       - else
-        .row
-          h5
-            = t('.inactive')
-          - if @auction.finished
-            - if @auction.winner == current_user
-              p#success_message
-                = t('.user_is_winner')
-            - elsif @auction.winner.nil?
-              p#error_message
-                = t('.no_winner')
-            - else
-              p#error_message
-                = t('.user_is_not_winner')
+        h5
+          = t('.inactive')
+        - if @auction.finished
+          - if @auction.winner == current_user
+            p#success_message
+              = t('.user_is_winner')
+          - elsif @auction.winner.nil?
+            p#error_message
+              = t('.no_winner')
           - else
-            p
-              = t('.no_winner_yet')
+            p#error_message
+              = t('.user_is_not_winner')
+        - else
+          p
+            = t('.no_winner_yet')
       = render 'auctions/bids', operations: @auction.bids.active
 
