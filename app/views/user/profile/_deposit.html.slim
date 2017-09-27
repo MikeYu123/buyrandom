@@ -1,0 +1,15 @@
+#deposit_form
+  h5
+    = t('.header')
+  = form_tag user_update_path do
+    / TODO: errors
+    .input-field
+      = label_tag :deposit, t('.amount')
+      = text_field_tag :deposit
+    .center-on-small-only
+      = link_to t('.confirm'), '', 'data-method': 'modal', class: 'btn inplat-pay', id: 'inplat_invoke_btn'
+javascript:
+  //var s=document.createElement("script");
+  //s.type="text/javascript";
+  //s.src="https://v-jet.inplat.ru/static/js/widget_tsp.js";
+  //document.body.appendChild(s);

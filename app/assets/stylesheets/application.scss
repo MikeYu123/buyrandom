@@ -115,3 +115,7 @@
   .error_message, #error_message {
     color: #B00100;
   }
+//Overriding some material shit
+.collapsible .collection-item span.badge {
+  margin-top: calc(0.75rem - 11px);
+}

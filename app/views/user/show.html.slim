@@ -7,43 +7,34 @@ h3
     .card-title.on-preview
       = @user.username
     br
-    .collection
-      .collection-item
-        = t('.email')
-        .right
-          = @user.email
+    ul.collapsible.popout data-collapsible='accordion'
+      li
+        .collapsible-header
+          = t('.email')
+          .right
+            = @user.email
+        .collapsible-body
+          = render 'user/profile/customize'
       - if @payment
-        .collection-item.dismissable
+        li
+        .collapsible-header.dismissable
           .green-text
             = t('.payment_succeeded')
-      .collection-item
-        = t('.balance')
-        .right
-          = @user.balance
-          span.badge.new data-badge-caption= t('.deposit')
-
-    .card-content
-      .row
-        .col.s4
-          = t('.email')
-        .col.s8
-          = @user.email
-      .row
-        .col.s4
+      li
+        .collapsible-header
           = t('.balance')
-        .col.s5
-          - if @payment
-            .success_message
-          = @user.balance
-        .col.s3
-          = link_to t('.deposit'), user_deposit_path, class: 'btn'
-      .row
-        .col.s12
-          = link_to t('.edit'), user_edit_path, class: 'btn'
-        .col.s12
-          = link_to t('.reset_password'), user_reset_password_path, class: 'btn'
-        .col.s12
-          = link_to t('.logout'), destroy_user_session_path, method: :delete, class: 'btn'
+          .right
+            span.badge.new data-badge-caption= t('.deposit')
+            = @user.balance
+        .collapsible-body
+          = render 'user/profile/deposit'
+      li
+        .collapsible-header
+          = t('.reset_password')
+        .collapsible-body
+          = render 'user/profile/reset_password'
+
+
       .row
         = render 'user/winning_notifications', notifications: @winning_notifications
 
@@ -66,4 +57,5 @@ h3
       - if @user.deposits.present?
         .row
           = render 'user/deposits', operations: @user.deposits
-
+    .card-action.center
+      = link_to t('.logout'), destroy_user_session_path, method: :delete

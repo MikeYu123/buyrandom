@@ -6,19 +6,19 @@
   table.bordered#auctions-listing
     thead
       tr
-        th
+        th.hide-on-med-and-down
         th.name= smart_listing.sortable t('views.auction.name'), :name
-        th.description= t('views.auction.description')
+        th.description.hide-on-med-and-down= t('views.auction.description')
         th.expires_at= t('views.auction.expires_at')
         th.current_amount= t('views.product.current_amount')
     tbody
       - smart_listing.collection.each do |auction|
         tr
-          td
+          td.hide-on-med-and-down
             .table-image
               =image_tag(auction.picture_url, {class: 'responsive-img'})
           td= link_to auction.name, auction_path(auction)
-          td= auction.description.truncate_words(5)
+          td.hide-on-med-and-down= auction.description.truncate_words(5)
           td
             .progress
               .determinate style="width: #{render_time_progress(auction)}"

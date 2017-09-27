@@ -101,6 +101,7 @@ ru:
       expired_auctions: "Прошедшие аукционы"
       current_auctions: "Текущие аукционы"
       bids: "Ставки"
+      customize: "Параметры"
     deposit:
       header: "Пополнить баланс"
       amount: "Сумма"
@@ -129,6 +130,22 @@ ru:
       deposits: "История пополнений"
       amount: "Сумма"
       created_at: ""
+    profile:
+      deposit:
+        header: "Пополнить"
+        amount: "Сумма"
+        confirm: "Пополнить"
+      customize:
+        header: "Параметры"
+        confirm: "Изменить"
+        email: "Email"
+        avatar_url: "Аватар"
+        username: "Имя"
+      reset_password:
+        header: "Сменить пароль"
+        password: "Пароль"
+        password_confirmation: "Повторите пароль"
+        confirm: "Подтвердить"
   products:
     auctions:
       auctions: "Аукционы"
